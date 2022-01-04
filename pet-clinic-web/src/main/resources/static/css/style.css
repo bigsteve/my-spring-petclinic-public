@@ -1,0 +1,7 @@
+.button-block-float-right {
+    float:right;
+    margin:-18px 30px 0;
+}
+.button-block-float-right a {
+    padding:4px 8px;
+}

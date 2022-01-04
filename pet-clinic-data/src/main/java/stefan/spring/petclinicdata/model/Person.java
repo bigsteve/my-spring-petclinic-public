@@ -17,21 +17,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @MappedSuperclass
 public class Person extends BaseEntity {
-    
-    
-    public Person(Long id, String firstName, String lastName) {
-        super();
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    
-    
 
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1287719506112388066L;
 
     @Column(name = "first_name")
-    private String firstName;
+    protected String firstName;
 
     @Column(name = "last_name")
-    private String lastName;
+    protected String lastName;
 
 }

@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 <head>
-<meta charset="ISO-8859-1">
+
+<meta charset="UTF-8">
 <title>Owners | Pet Clinic</title>
 </head>
 <body>
 	<h1 th:text="'List of Owners'">Owners</h1>
-
-	<table>
+	<div class="row">
+		<div class="col-md-12">
+			<img class="img-responsive" src="../static/resources/images/pets.png"
+				th:src="@{/resources/images/pets.png}" />
+		</div>
+		<div class="col-md-1 button-block-float-right">
+			<a class="btn btn-default" href="#" th:href="@{edit/}" role="button">Add
+				Owner</a>
+		</div>
+	</div>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Id</th>
 				<th>First Name</th>
 				<th>Last Name</th>
+				<th>VIew</th>
+				<th>Edit</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -20,6 +33,8 @@
 				<td th:text="${owner?.id}"></td>
 				<td th:text="${owner?.firstName}"></td>
 				<td th:text="${owner?.lastName}"></td>
+				<td><a href="#" th:href="@{'/owners/'+${owner?.id}+'/'}">View</a></td>
+				<td><a href="#" th:href="@{'/owners/'+${owner?.id}+'/edit/'}">Edit</a></td>
 			</tr>
 		</tbody>
 	</table>

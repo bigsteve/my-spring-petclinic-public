@@ -24,8 +24,16 @@ import lombok.Setter;
 @MappedSuperclass
 public class BaseEntity implements Serializable {
 
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 3754761157697813678L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
+    
+    
 
+    
+    
 }

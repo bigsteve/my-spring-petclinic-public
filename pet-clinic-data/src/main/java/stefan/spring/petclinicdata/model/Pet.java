@@ -1,11 +1,22 @@
 package stefan.spring.petclinicdata.model;
 
-import lombok.*;
-
-import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Created by jt on 7/13/18.
@@ -18,6 +29,11 @@ import java.util.Set;
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity{
+
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 2150012090242814246L;
 
     @Column(name = "name")
     private String name;
@@ -34,6 +50,6 @@ public class Pet extends BaseEntity{
     private LocalDate birthDate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
-    private Set<Visit> vists = new HashSet<>();
+    private Set<Visit> visits = new HashSet<>();
 
 }

@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.mypetclinic</groupId>
@@ -14,7 +16,7 @@
 		<webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
 		<webjars-jquery-ui.version>1.11.4</webjars-jquery-ui.version>
 		<webjars-jquery.version>2.2.4</webjars-jquery.version>
-		<wro4j.version>1.9.0</wro4j.version>
+		<wro4j.version>1.8.0</wro4j.version>
 	</properties>
 
 	<dependencies>
@@ -23,7 +25,6 @@
 			<groupId>com.mypetclinic</groupId>
 			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -36,15 +37,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-		<!-- webjars -->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>webjars-locator-core</artifactId>
@@ -64,8 +61,6 @@
 			<artifactId>bootstrap</artifactId>
 			<version>${webjars-bootstrap.version}</version>
 		</dependency>
-		<!-- end of webjars -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -90,15 +85,20 @@
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-junit-jupiter</artifactId>
-			<version>2.22.0</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.junit.vintage</groupId>
-			<artifactId>junit-vintage-engine</artifactId>
-			<version>5.4.0</version>
-			<scope>test</scope>
-		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-library -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+        </dependency>
+
+		<!-- <dependency> <groupId>org.junit.vintage</groupId> <artifactId>junit-vintage-engine</artifactId> 
+			<scope>test</scope> </dependency> -->
 	</dependencies>
 
 	<build>
