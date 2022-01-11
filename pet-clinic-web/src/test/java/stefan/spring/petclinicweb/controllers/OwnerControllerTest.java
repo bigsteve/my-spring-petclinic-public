@@ -141,19 +141,19 @@ class OwnerControllerTest {
 
     @Test
     void processCreationForm() throws Exception {
-//        when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder()
-//                .id(7L)
-//                .address("111 street")
-//                .city("mycity")
-//                .telephone("1111111111")
-//                .build());
-//
-//        mockMvc.perform(post("/owners/new/"))
-//        .andExpect(status().is3xxRedirection())
-//                .andExpect(view().name("redirect:/owners/7/"))
-//                .andExpect(model().attributeExists("owner"));
-//
-//        verify(ownerService).save(any());
+       when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder()
+               .id(7L)
+               .address("111 street")
+               .city("mycity")
+               .telephone("1111111111")
+               .build());
+
+       mockMvc.perform(post("/owners/new/"))
+       .andExpect(status().is3xxRedirection())
+               .andExpect(view().name("redirect:/owners/7/"))
+               .andExpect(model().attributeExists("owner"));
+
+       verify(ownerService).save(any());
         
     }
 
@@ -171,14 +171,14 @@ class OwnerControllerTest {
     @Test
     void processUpdateOwnerForm() throws Exception {
 
-//        when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1L).build());
+       when(ownerService.save(ArgumentMatchers.any())).thenReturn(Owner.builder().id(1L).build());
 
-//        mockMvc.perform(post("/owners/1/edit/"))
-//                .andExpect(status().is3xxRedirection())
-//                .andExpect(view().name("redirect:/owners/1/"))
-//                .andExpect(model().attributeExists("owner"));
-//
-//        verify(ownerService).save(any());
+       mockMvc.perform(post("/owners/1/edit/"))
+               .andExpect(status().is3xxRedirection())
+               .andExpect(view().name("redirect:/owners/1/"))
+               .andExpect(model().attributeExists("owner"));
+
+       verify(ownerService).save(any());
         
     }
 
