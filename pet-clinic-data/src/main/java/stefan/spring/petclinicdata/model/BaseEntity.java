@@ -33,6 +33,10 @@ public class BaseEntity implements Serializable {
     protected Long id;
     
     
+    public boolean isNew() {
+        return this.id == null;
+    }
+    
 
     
     

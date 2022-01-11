@@ -6,10 +6,6 @@
 
     <h2>Owners</h2>
     
-        <div class="col-md-1 button-block-float-right">
-            <a class="btn btn-default" href="#" th:href="@{edit/}" role="button">Add
-                Owner</a>
-        </div>
 
     <table id="vets" class="table table-striped">
         <thead>
@@ -29,10 +25,15 @@
               <td th:text="${owner.address}"/>
               <td th:text="${owner.city}"/>
               <td th:text="${owner.telephone}"/>
-              <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "/></td>
+              <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} +', ' "/></td>
           </tr>
         </tbody>
     </table>
+    
+        <div class="col-md-1 button-block-float-right">
+            <a class="btn btn-default" href="#" th:href="@{/owners/new/}" role="button">Add
+                Owner</a>
+        </div>
 
   </body>
 </html>

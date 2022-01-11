@@ -5,3 +5,7 @@
 .button-block-float-right a {
     padding:4px 8px;
 }
+
+.has-error .help-inline {
+	color:#a94442;
+}
